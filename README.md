@@ -40,7 +40,7 @@ Their are four types of provision available split between two types of privilege
 
 ### The opinionated bits...
 
-Scripting in Bash is an adventure in much the same way putting your hand into a bag of broken glass is an adventure, to mitigate that, the provision runner has a few defaults sets to try and make scripting provisions a little less of an adventure.  You can of course comment them out if they're not to your taste, but that's between you and the bug of broken glass at that point. 
+Scripting in Bash is an adventure in much the same way putting your hand into a bag of broken glass is an adventure, to mitigate that, the provision runner has a few defaults sets to try and make scripting provisions a little less of an adventure.  You can of course comment them out if they're not to your taste, but that's between you and the bag of broken glass at that point. 
 
  - `set -o nounset` - This causes bash to complain if you reference an undeclared variable and to raise an error.
  - `set -o errexit` - This causes bash to exit on error, working quite nicely with the setting above.
