@@ -15,7 +15,14 @@ Provisioning a complicated project in Vagrant can often start to get messy and i
 
 Provisions are ran through `vagrant/provisions/runner.sh`, which sets some useful, if occasionally opinionated (and as a result optional) settings and constraints to run provisions under.  Beyond that, provisions are also broken down into four different types of provisions that run with different privilege levels and at different times in the Vagrant life-cycle, as documented below.
 
-### Provision Types.
+Provisions **MUST** be shell scripts ending in `.sh` and **MUST** be placed in the relevant subfolder of `vagrant/provisions` for the desired privilege/life-cycle provision.  The available subfolders are:
+
+- `vagrant/provisions/privileged-always`
+- `vagrant/provisions/privileged-once`
+- `vagrant/provisions/unprivileged-always`
+- `vagrant/provisions/unprivileged-once`
+
+### Provision Types
 
 Their are four types of provision available split between two types of privilege and two types of life-cycle level, which are defined below.
 
