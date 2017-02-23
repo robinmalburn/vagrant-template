@@ -19,8 +19,8 @@ if [ $# -eq 0 ]; then
     exit 1;
 fi
 
-# Check the target exists and is executable.
-if [ ! -x "${1}" ]; then
+# Check the target file exists.
+if [ ! -f "${1}" ]; then
     echo "Provision [ ${1} ] not found"
     exit 1
 fi
