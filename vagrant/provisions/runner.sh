@@ -25,6 +25,6 @@ if [ ! -f "${1}" ]; then
     exit 1
 fi
 
-# Souce the target to ensure it inherits the rules and environment
+# Source the target to ensure it inherits the rules and environment
 # variables established in the runner.
 source "${1}" 
