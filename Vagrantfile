@@ -63,27 +63,39 @@ Vagrant.configure(2) do |config|
 
   # Do privileged provisions...
   if Dir.exist?("#{provision_dir}/privileged-once")
-      Dir.glob("#{provision_dir}/privileged-once/*.sh") do |item|
-          config.vm.provision "shell", path: provision_runner, privileged: true, name: "Privileged Once: #{item}", args: ["/vagrant/#{item}"]
+      items = Dir.glob("#{provision_dir}/privileged-once/*.sh")
+      unless items.nil?
+          items.sort.each do |item|
+              config.vm.provision "shell", path: provision_runner, privileged: true, name: "Privileged Once: #{item}", args: ["/vagrant/#{item}"]
+          end
       end
   end
 
   if Dir.exist?("#{provision_dir}/privileged-always")
-      Dir.glob("#{provision_dir}/privileged-always/*.sh") do |item|
-          config.vm.provision "shell", path: provision_runner, privileged: true, run: "always", name: "Privileged Always: #{item}", args: ["/vagrant/#{item}"]
+      items = Dir.glob("#{provision_dir}/privileged-always/*.sh")
+      unless items.nil?
+          items.sort.each do |item|
+              config.vm.provision "shell", path: provision_runner, privileged: true, run: "always", name: "Privileged Always: #{item}", args: ["/vagrant/#{item}"]
+          end
       end
   end
 
   #Do unprivileged provisoons...
   if Dir.exist?("#{provision_dir}/unprivileged-once")
-      Dir.glob("#{provision_dir}/unprivileged-once/*.sh") do |item|
-          config.vm.provision "shell", path: provision_runner, privileged: false, name: "Unprivileged Once: #{item}", args: ["/vagrant/#{item}"]
+      items = Dir.glob("#{provision_dir}/unprivileged-once/*.sh")
+      unless items.nil?
+          items.sort.each do |item|
+              config.vm.provision "shell", path: provision_runner, privileged: false, name: "Unprivileged Once: #{item}", args: ["/vagrant/#{item}"]
+          end
       end
   end
 
   if Dir.exist?("#{provision_dir}/unprivileged-always")
-      Dir.glob("#{provision_dir}/unprivileged-always/*.sh") do |item|
-          config.vm.provision "shell", path: provision_runner, privileged: false, run: "always", name: "Unprivileged Always: #{item}", args: ["/vagrant/#{item}"]
+      items = Dir.glob("#{provision_dir}/unprivileged-always/*.sh")
+      unless items.nil?
+          items.sort.each do |item|
+              config.vm.provision "shell", path: provision_runner, privileged: false, run: "always", name: "Unprivileged Always: #{item}", args: ["/vagrant/#{item}"]
+          end
       end
   end
 
