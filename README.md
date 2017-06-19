@@ -6,7 +6,7 @@ This is a simple Vagrant template to take away some of the boilerplate set up wh
 
 In the `Vagrantfile` itself, for a minimal set up, the only values that really need updating are:
 
- - `config.vm.box`: Currently set to *ubuntu/xenial64* as a sane default, but update to you Vagrant box of choice.
+ - `config.vm.box`: Currently set to *ubuntu/xenial64* as a sane default, but update to your Vagrant box of choice.
  - `vb.name`: Currently set to *placeholder-name* as a sane default, feel free to rename the VM to whatever you like, or remove this entirely if you don't care to name your VMs.
 
 ## Provisions

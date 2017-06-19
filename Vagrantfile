@@ -80,7 +80,7 @@ Vagrant.configure(2) do |config|
       end
   end
 
-  #Do unprivileged provisoons...
+  #Do unprivileged provisions...
   if Dir.exist?("#{provision_dir}/unprivileged-once")
       items = Dir.glob("#{provision_dir}/unprivileged-once/*.sh")
       unless items.nil?
